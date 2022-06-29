@@ -6,7 +6,7 @@ terraform {
   }
   required_version =  ">= 0.13"
 
-  backend "s3" {
+/*  backend "s3" {
     endpoint   = "storage.yandexcloud.net"
     bucket     = "os-tfstate"
     region     = "ru-central1"
@@ -16,7 +16,7 @@ terraform {
 
     skip_region_validation      = true
     skip_credentials_validation = true
-  }
+  } */
 }
 
 provider yandex {
@@ -25,3 +25,6 @@ provider yandex {
   folder_id 		   = var.yandex_folder_id
 }
 
+resource "yandex_storage_bucket" "test" {
+  bucket = "ostfstate"
+}

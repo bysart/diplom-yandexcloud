@@ -1,0 +1,8 @@
+#cloud-config
+users:
+  - name: sovar
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDqqHZ25Q+Kmki1yQjfHAsFmyxyTx4jLfTLTVDKvqWbu5c4o78T7PhgSFKAdbV6ToUaPhRddZzi15CIy0LeoKVsPAd6tza1dolU/KMhKmeQcW/tk1J1nubia9580Tp/CXYqXctne1wprFSH4vxmRt1ei3uCMNX8RWqwBqb58YhzmwtbZvUp+5vdCaMbWG2NYrp73EZXksULY8Fl86aum/cyBNYyybaX6eMdoRvu2UFMAgPnvnuOZnF2ymaoF4w9+rggFS/9F4ntvrWWvKlh5O6JOXmUx6YjyBuYH/6jAogAJj9vnhZErce6OeDia3+E9loyEuFvXLG39/+AlZjAq7YoEw8HQPQ9ibndt0td1/lDzfv3GgS3MzTNBMqCpMn35R8C5zthKBtQQFWTo3vA8wGKv6EYuI73JIya27Iuu+d/xc7sQRrmtRISbMMPXiGZZ6I3jFhEyLCkqTpiH6iFIyFFR5jxrhTfbjEh9rUgH7E5DVQaMEHdXGdhCsX063sZAAk= sovar@fedora

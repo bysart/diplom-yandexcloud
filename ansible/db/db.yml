@@ -1,0 +1,25 @@
+---
+  - name: Installation mysql
+    hosts: db
+    become: yes
+    become_user: root
+    remote_user: sovar
+    roles:
+      - db-install
+
+  - name: Setup master
+    hosts: db01
+    become: yes
+    become_user: root
+    remote_user: sovar
+    roles:
+      - db-setup-master
+
+  - name: Setup slave
+    hosts: db02
+    become: yes
+    become_user: root
+    remote_user: sovar
+    roles:
+      - db-setup-slave
+
