@@ -1,6 +1,5 @@
 resource "yandex_compute_instance" "mashine" {
-  count 		    = 3
-  zone                      = "ru-central1-a"
+  count 		    = 7 
   hostname                  = var.vm[count.index]
 
   resources {

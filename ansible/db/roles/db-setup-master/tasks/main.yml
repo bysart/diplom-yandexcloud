@@ -1,12 +1,12 @@
 ---
-  - name: Create a new database  
+  - name: Creating a new database  
     mysql_db: 
       name: wordpress 
       state: present 
       login_user: wordpress 
       login_password: "wordpress"
 
-  - name: Mysql master setup config
+  - name: Setuping mysql master config
     template:
       src: templates/mysqld.cnf
       dest: /etc/mysql/mysql.conf.d/mysqld.cnf

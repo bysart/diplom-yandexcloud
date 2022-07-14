@@ -21,7 +21,7 @@
       state: restarted
       enabled: true
 
-  - name: Setup user
+  - name: Setuping user
     mysql_user:
       name: wordpress
       password: "wordpress"  

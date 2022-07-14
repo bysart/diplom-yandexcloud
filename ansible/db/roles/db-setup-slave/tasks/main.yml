@@ -1,17 +1,17 @@
 ---
-  - name: Create a new database
+  - name: Creatnge a new database
     mysql_db:
       name: wordpress
       state: present
       login_user: wordpress
       login_password: "wordpress"
 
-  - name: Mysql slave setup config
+  - name: Setuping mysql slave config
     template:
       src: templates/mysqld.cnf
       dest: /etc/mysql/mysql.conf.d/mysqld.cnf
 
-  - name: Configure replication on the slave
+  - name: Configuring replication on the slave
     mysql_replication:
       mode: changeprimary
       primary_host: 192.168.100.101
@@ -26,11 +26,11 @@
       state: restarted
       enabled: true
 
-  - name: Reset replica
+  - name: Reseting replica
     mysql_replication: 
       mode: resetreplica
 
-  - name: Start replica
+  - name: Starting replica
     mysql_replication:
       mode: startreplica
 
