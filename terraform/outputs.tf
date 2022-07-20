@@ -29,7 +29,7 @@ output "internal_ip_address_app_bysart_ru" {
 output "external_ip_address_app_bysart_ru" {
   value = "${yandex_compute_instance.mashine[3].network_interface.0.nat_ip_address}"
 }
-/*
+
 output "internal_ip_address_gitlab_bysart_ru" {
   value = "${yandex_compute_instance.mashine[4].network_interface.0.ip_address}"
 }
@@ -45,7 +45,7 @@ output "internal_ip_address_runner_bysart_ru" {
 output "external_ip_address_runner_bysart_ru" {
   value = "${yandex_compute_instance.mashine[5].network_interface.0.nat_ip_address}"
 }
-*/
+
 output "internal_ip_address_monitoring_bysart_ru" {
   value = "${yandex_compute_instance.mashine[6].network_interface.0.ip_address}"
 }

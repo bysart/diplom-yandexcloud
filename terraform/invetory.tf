@@ -17,6 +17,12 @@ resource "local_file" "inventory" {
     [wordpress]
     app.bysart.ru ansible_host=${yandex_compute_instance.mashine[3].network_interface.0.nat_ip_address} domain=bysart.ru 
 
+    [gitlab]
+    gitlab.bysart.ru ansible_host=${yandex_compute_instance.mashine[4].network_interface.0.nat_ip_address} domain=bysart.ru gitlab_external_url=http://gitlab.bysart.ru/
+
+    [runner]
+    runner.bysart.ru ansible_host=${yandex_compute_instance.mashine[5].network_interface.0.nat_ip_address} domain=bysart.ru  
+
     [monitoring]
     monitoring.bysart.ru ansible_host=${yandex_compute_instance.mashine[6].network_interface.0.nat_ip_address} domain=bysart.ru
 

@@ -37,7 +37,7 @@ resource "null_resource" "wordpress" {
     null_resource.db
   ]
 }
-/*
+
 resource "null_resource" "gitlab" {
   provisioner "local-exec" {
     command = "ANSIBLE_FORCE_COLOR=1 ansible-playbook -i ../ansible/inventory.yml ../ansible/gitlab/gitlab.yml"
@@ -47,17 +47,16 @@ resource "null_resource" "gitlab" {
     null_resource.wordpress
   ]
 }
-*/
+
 resource "null_resource" "monitoring" {
   provisioner "local-exec" {
     command = "ANSIBLE_FORCE_COLOR=1 ansible-playbook -i ../ansible/inventory.yml ../ansible/monitoring/monitoring.yml"
   }
 
  depends_on = [
-    null_resource.db
+    null_resource.gitlab
   ]
 }
-
 
 resource "null_resource" "node_exporter" {
   provisioner "local-exec" {

@@ -55,3 +55,11 @@ resource "yandex_dns_recordset" "alertmanager" {
   data    = ["${yandex_compute_instance.mashine[0].network_interface.0.nat_ip_address}"]
 }
 
+resource "yandex_dns_recordset" "gitlab" {
+  zone_id = yandex_dns_zone.bysart_ru.id
+  name    = "gitlab"
+  type    = "A"
+  ttl     = 200
+  data    = ["${yandex_compute_instance.mashine[0].network_interface.0.nat_ip_address}"]
+}
+
